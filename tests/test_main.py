@@ -49,7 +49,7 @@ class TestAmazonCaptcha(unittest.TestCase):
         solution = AmazonCaptcha(os.path.join(base_examples_folder, 'notsolved_2.jpg')).solve()
         self.assertEqual(solution, 'Not solved')
 
-    def test_fromlink_with_predefined_undolvable_captcha(self):
+    def test_fromlink_with_predefined_unsolvable_captcha(self):
         link = 'https://i.ibb.co/Cn2J1mS/notsolved.jpg'
         captcha = AmazonCaptcha.fromlink(link)
         solution = captcha.solve()
