@@ -1,4 +1,4 @@
-pillow~=10.2.0
+pillow~=10.3.0
 requests~=2.32.3
 coverage~=7.5.3
 codecov>=2.1.12
