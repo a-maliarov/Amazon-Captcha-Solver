@@ -3,13 +3,14 @@
 import setuptools
 import os
 
-#--------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------------
 
 here = os.path.abspath(os.path.dirname(__file__))
 
 with open(os.path.join(here, 'amazoncaptcha', '__version__.py'), 'r', encoding='utf-8') as f:
     file_data = [i.replace('\n', '').replace('\'', '').split(' = ') for i in f.readlines()]
     about = {k: v for k, v in file_data}
+
 
 def readme(logo_end_line=14):
     """Extracts the logo from README file before pushing to PyPi."""
@@ -18,6 +19,7 @@ def readme(logo_end_line=14):
         long_description = ''.join(fh.readlines()[logo_end_line:])
 
     return long_description
+
 
 classifiers = [
     "Programming Language :: Python :: 3.6",
@@ -34,11 +36,11 @@ classifiers = [
 ]
 
 requires = [
-    "pillow >= 9.0.1,< 9.6.0",
-    "requests >= 2.27.1,< 2.31.0"
+    "pillow >= 9.0.1,< 10.4.0",
+    "requests >= 2.27.1,< 2.33.0"
 ]
 
-#--------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------------
 
 setuptools.setup(
     name=about['__title__'],
@@ -61,4 +63,4 @@ setuptools.setup(
     },
 )
 
-#--------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------------
